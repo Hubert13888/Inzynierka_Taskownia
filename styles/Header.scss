@@ -1,0 +1,83 @@
+@import "./vars/main";
+nav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  font-size: 1.4vw;
+
+  .toolbar {
+    background-color: $white;
+    height: $navHeight;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1.5fr;
+    color: $black;
+    width: 100vw;
+    border-radius: 0px;
+      &>* {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin: auto 0;
+      }
+      .routing {
+        justify-content: flex-end;
+
+        .slidedownmenu_badge {
+          position: relative;
+          height: 100%;
+          p {
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          .slidedownmenu {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            background-color: $white;
+            padding: 2vw 2vw;
+            top: 100%;
+            left: 0;
+            width: 30vw;
+            opacity: 0%;
+            transition: opacity 200ms;
+            pointer-events: none;
+            a {
+              margin: 0.5vw 0;
+            }
+            .logout_button {
+              align-self: center;
+              margin-top: 1.75vw;
+              background-color: $yellow;
+              width: 10vw;
+            }
+          }
+          .show {
+            opacity: 100%;
+            pointer-events: all;
+          }
+        }
+      }
+      .logo{
+        display: block;
+        text-indent: -9999px;
+        width: 6.3vw;
+        height: 4.7vw;
+        background: url(assets/pictures/logo.svg) no-repeat;
+        background-size: 6.3vw 4.7vw;
+        margin-left: 15px;
+      }
+      .profile Button {
+        font-size: 1.2vw;
+        padding: 0.5vw 1.5vw;
+        height: 90%;
+        border-radius: 1.5vw;
+        border: 0.2vw solid $black;
+        color: black;
+      }
+  }
+}
+  

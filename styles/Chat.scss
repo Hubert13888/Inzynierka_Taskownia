@@ -1,0 +1,128 @@
+@import "./vars/main";
+
+.chat_container{
+  width: 100%;
+  min-height: calc(100vh - #{$navHeight});
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr;
+  z-index: -3;
+  background: $linearGradient;
+  .container_heading{
+    margin: 20px;
+  }
+  .chat{
+    &_wrapper{
+      grid-row: 2/3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    &_body{
+      @media (max-width: 1440px){
+        width: 80%;
+      }
+      @media (max-width: 800px){
+        width: 90%;
+      }
+      @media (max-width: 500px){
+        width: 95%;
+      }
+      width: 70%;
+      z-index: 1;
+      border-radius: 15px;
+      box-shadow: 0 5px 9px -3px rgba(0,0,0, 0.15);
+      display: grid;
+      grid-template-rows: 70px 55vh 110px;
+
+    } 
+    &_heading{
+      grid-row: 1/2;
+      display: flex;
+      border-radius: 15px 15px 0 0;
+      align-items: center;
+      justify-content: center;
+      background: $blue;
+      color: $white;
+      z-index: 1;
+      font-size: 30px;
+      box-shadow: 0 5px 8px 0px rgba(0,0,0, 0.1);
+    }
+    &_messages{
+      grid-row: 2/3;
+      background: $white;
+      overflow-y: auto;
+      z-index: -1;
+      padding: 2px 15px;
+      box-shadow: inset 0 0 5px -3px rgba(0,0,0, 3.5);
+      .message{
+        display: flex;
+        flex-direction: column;
+      }
+      .message_wrapper{
+        width: 100%;
+        margin: 5px 0;
+        .content{
+          max-width: 40%;
+          padding: 7px;
+          box-shadow: inset 0 0 6px -4px rgba(0,0,0, 5.5);
+        }
+        .name{
+          margin: 2px 8px;
+        }
+        .date{
+          margin: 1px 3px;
+          color: $darkGray;
+          font-size: 14px;
+        }
+      }
+      .other_message{
+        .content{
+          background: $blue;
+          color: $white;
+          border-radius: 15px 15px 15px 4px;
+        }
+      }      
+      .my_message{
+        align-items: flex-end;
+        .content{
+          background: $gray;
+          border-radius: 15px 15px 4px 15px;
+        }
+      }
+    }
+    &_actions{
+      padding: 15px 45px;
+      border-radius: 0 0 15px 15px;
+      display: grid;
+      grid-template-columns: 70% 30%;
+      grid-row: 3/4;
+      background: $blue;
+      box-shadow: inset 0 0 5px -3px rgba(0,0,0, 3.5);
+      & > * {
+        align-self: center;
+      }
+      div:first-child{
+        background: $white;
+        border-radius: 15px;
+        font-size: 18px;
+        box-shadow: inset 0 0 7px -3px rgba(0,0,0, 3.5);
+      }
+      button{
+        justify-self: flex-end;
+        background: $yellow;
+        height: 45px;
+        width: 100px;
+        text-transform: none;
+        color: $black;
+        font-size: 21px;
+        transition: 200ms ease;
+        &:disabled{
+          background: $gray;
+        }
+      }
+
+    }
+  }
+}

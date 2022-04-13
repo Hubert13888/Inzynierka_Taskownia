@@ -1,0 +1,241 @@
+@import "./vars/main";
+
+.Home {
+  height: 100%;
+  width: 100%;
+  .frontWrapper {
+    position: relative;
+    .goDown {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      left: 50%;
+      top: 100%;
+      z-index: 4;
+      width: 5vw;
+      height: 5vw;
+      transform: translate(-50%, -50%);
+      border-radius: 20vw;
+      background-color: rgba(0,0,0,0.8);
+      color: $white;
+    }
+
+    .front {
+      position: relative;
+      height: calc(100vh - #{$navHeight});
+      background: url("/assets/pictures/front.jpg") no-repeat;
+  
+      background-size: cover;
+      overflow: hidden;
+  
+      &:before {
+        z-index: 0;
+        content: "";
+        position: absolute;
+        height: inherit;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.2);
+      }
+  
+      &:after {
+        content: "";
+        z-index: 0;
+        position: absolute;
+        height: 120%;
+        width: 60%;
+        top: 0;
+        left: -10%;
+        background-color: rgba(255,255,255,0.6);
+        transform: rotate(5deg);
+      }
+  
+      .followUsBox {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        background-color: $blue;
+        padding: 1vw 1vw;
+        padding-bottom: 0;
+        h1 {
+          display: grid;
+          place-items: center;
+          font-size: 1.5vw;
+          margin-right: 2vw;
+          color: $white;
+          transform: rotate(-2deg);
+        }
+        .facebookIcon {
+          font-size: 2vw;
+          color: $facebook;
+          background-color: $white;
+        }
+        .TwitterIcon {
+          font-size: 2vw;
+          color: $twitter;
+          background-color: $yellow;
+        }
+  
+        .brandIcon {
+          height: 100%;
+          padding: 0.5vw 1vw;
+          cursor: pointer;
+          margin: 0 0.5vw; 
+          //outline: $black 1px solid;
+        }
+  
+      }
+  
+      .rightTitle {
+        z-index: 2;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        
+        right: 0;
+        top: 0;
+        width: 50%;
+        height: inherit;
+        background: $blueGradient;
+        //background: linear-gradient(90deg, rgba(255,255,255, 0) 0%, $blueGradient 70%);
+        .rightInfo {
+          .box1 {
+            position: relative;
+            background-color: $yellow;
+            display: flex;
+            border-radius: 1vw;
+            color: $black;
+            padding: 0.8vw 4vw;
+            font-size: 3vw;
+            transform: rotate(-2deg);
+            &>p {
+              span {
+                border: $white 0.5vw solid;
+                padding: 0.75vw 1.75vw;
+                background-color: $blue;
+                color: $yellow;
+              }
+            }
+            .box2 {
+              z-index: 1;
+              position: absolute;
+              top: 120%;
+              font-size:2vw;
+              color: $white;
+              p {
+                margin-left: 1vw;
+                border-bottom: $yellow 0.4vw solid;
+              }
+              //tutaj jest czarne tło dla dolnego
+              /*&:before {
+                z-index: -1;
+                position: absolute;
+                display: grid;
+                place-items: center;
+                content: "";
+                width: 120%;
+                height: 100%;
+                left: 0;
+                bottom: 0;
+                background-color: $black;
+                transform: skewX(-10deg);
+              }*/
+            }
+          }
+        }
+        .rightMessage {
+          margin-top: 15%;
+          padding: 20px 10%;
+          text-align: center;
+          font-size: 1.4vw;
+          color: $white;
+        }
+        .buttonBox {
+          align-self: center;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 5%;
+          width: 50%;
+          button {
+            font-size: 1.4vw;
+            padding: 0.75vw 1.25vw;
+            border: none;
+            background-color: transparent;
+          }
+          .registrationButton {
+            border: $yellow solid 0.4vw;
+            background-color: $yellow;
+            color: $black;
+            border-radius: 0.4vw;
+          }
+          .loginButton {
+            border: $white solid 0.2vw;
+            border-radius: 0.4vw;
+            color: $white;
+          }
+        }
+      }
+      .leftTitle {
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 50%;
+        transform: translateY(-60%);
+        width: 50%;
+        overflow: hidden;
+  
+        
+        .leftContent {
+          position: relative;
+          right: 0;
+          z-index: 2;
+          max-width: 80%;
+          //border-left: $blue 10px solid; 
+          .box1 {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            background-color: rgba(0,0,0,0.6);
+            padding: 2vw 2vw;
+            font-size: 1.5vw;
+            margin: 5% 0;
+            border-radius: 0.4vw;
+            .leftMessage {
+              position: relative;
+              //border: $white 1.5px solid;
+              padding: 1vw;
+              text-align: center;
+              &::first-letter {
+                color: $yellow;
+                font-size: 3vw;
+                margin: 1vw;
+              }
+            }
+            .leftMessageAfter {
+              align-self: center;
+              margin-top: 5%;
+              text-align: right;
+              background-color: TRANSPARENT;
+              color: $white;
+              padding: 0.5vw 1vw;
+              border: $yellow 0.2vw solid;
+              border-radius: 0.1vw;
+              font-size: 1.5vw;
+            }
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    margin: 0;
+  }
+}

@@ -1,0 +1,113 @@
+@import "./vars/main";
+
+.dashboard {
+  display: grid;
+  width: 100%;
+
+  >*>h1 {
+    font-size: 2vw;
+    margin-bottom: 2.5vw;
+  }
+  >*{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2vw;
+  }
+  .column1 {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+    *> {
+    }
+    .project_tile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1vw 0;
+      width: 100%;
+      .tile_info {
+        h2 {
+          font-size: 1.8vw;
+          margin: 0;
+        }
+        p {
+          font-size: 1.4vw;
+        }
+        .userInfo {
+          display: flex;
+          justify-content: space-between;
+          p {
+            font-size: 1.3vw;
+          }
+        }
+        .description {
+          margin: 1.5vw 0;
+          font-size: 1.2vw;
+          width: 50vw;
+          overflow-wrap: anywhere;
+        }
+      }
+    }
+    .tile_button {
+      padding-left: 5vw;
+    }
+  }
+  .column2 {
+    grid-column: 2;
+    form {
+      display: flex;
+      flex-direction: column;
+
+      font-size: 1.1vw;
+      display: grid;
+      div:first-child, div:nth-child(2):not(.MuiInputAdornment-root),
+      div:nth-child(3), div:nth-child(4){
+       margin-bottom: 0.75vw;
+       width: 100%;
+
+      }
+      div:nth-child(2) .MuiSvgIcon-root{
+       font-size: 1.5vw;
+      }
+      input {
+        width: 20vw;
+      }
+      div label{
+        font-size: 1.1vw;
+      }
+
+      .MuiIconButton-root {
+        padding: 1vw;
+        }
+        .MuiFilledInput-input {
+          padding: 1.6vw 0.75vw 1vw;
+       }
+       .MuiInputLabel-formControl {
+          transform: translate(1vw, 1.6vw) scale(1);
+       }
+
+       .MuiInputLabel-shrink {
+          transform: translate(0.75vw, 0.55vw) scale(1);
+          font-size: .9vw;
+       }
+
+       .MuiFormControl-root .MuiInputBase-root input {
+           font-size: 1.2vw;
+        }
+    }
+  }
+}
+.relatedLinks {
+  margin-top: 10vh;
+  h2 {
+    margin-bottom: 5vh;
+    text-align: center;
+  }
+  button {
+    margin: 10px;
+  }
+}
+.dashboard_client {
+  grid-template-columns: 4fr 2fr;
+}

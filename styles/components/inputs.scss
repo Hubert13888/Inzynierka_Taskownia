@@ -1,0 +1,18 @@
+.MuiIconButton-root {
+padding: 1vw;
+}
+.MuiFilledInput-input {
+  padding: 1.6vw 0.75vw 1vw;
+}
+.MuiInputLabel-formControl {
+  transform: translate(1vw, 1.6vw) scale(1);
+}
+
+.MuiInputLabel-shrink {
+  transform: translate(0.75vw, 0.55vw) scale(1);
+  font-size: .9vw;
+}
+
+.MuiFormControl-root .MuiInputBase-root input {
+    font-size: 1.2vw;
+}

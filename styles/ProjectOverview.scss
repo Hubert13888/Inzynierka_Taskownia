@@ -1,0 +1,20 @@
+@import "./vars/main";
+
+.projectOverview {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  .centerWrapper {
+    text-align: center;
+    width: 50vw;
+    p {
+      overflow-wrap: break-word;
+    }
+  }
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+}
